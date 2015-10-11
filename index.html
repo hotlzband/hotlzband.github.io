@@ -8,7 +8,7 @@
 		<script>
 			function padDate(n){return n<10 ? '0'+n : n}
 			
-			function setWindowSize(){document.getElementById("body").style.width = "400px";}
+			function setWindowSize(){document.getElementById("body").style.width = window.innerWidth + "px";}
 			
 			function populateShows(){
 				var date = new Date();
@@ -67,6 +67,17 @@
 			}
 			hr {
 				margin: 0;
+			}
+			.clearfix:before,
+			.clearfix:after {
+				content: " ";
+				display: table;
+			}
+			.clearfix:after {
+				clear: both;
+			}
+			.clearfix {
+				*zoom: 1;
 			}
 		</style>
 	</head>
