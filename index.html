@@ -10,12 +10,9 @@
 
 			function populateShows(){
 				var date = new Date();
-				var calendar_json_url = './scripts/dates.json';
-				//var calendar_json_url = 'http://www.google.com/calendar/feeds/n9if4js3l7d3k8u57un90s7ueg%40group.calendar.google.com/public/basic?alt=json';
-				//calendar_json_url = calendar_json_url + '&start-min=' + date.getFullYear() + '-' + padDate(date.getMonth() + 1) + '-' + padDate(date.getDate());
+				var calendar_json_url = './objects/dates.json';
 				$.getJSON(calendar_json_url, function(data){
 					$.each(data, function(i, item){
-					//$.each(data.feed.entry, function(i, item){
 						var when = new Date(item.start);
 						var where = item.location;
 						var row = '<tr><td style="width:35%">' + when.toDateString() + '</td><td style="width:10%;"/><td><a target="_blank" href="http://maps.google.com/?q=' + where + '">' + where + '</a></td></tr>';
