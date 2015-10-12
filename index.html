@@ -18,7 +18,7 @@
 					//$.each(data.feed.entry, function(i, item){
 						var when = new Date(item.start);
 						var where = item.location;
-						var row = '<tr><td style="width:35%">' + when + '</td><td style="width:10%;"/><td><a target="_blank" href="http://maps.google.com/?q=' + where + '">' + where + '</a></td></tr>';
+						var row = '<tr><td style="width:35%">' + when.toDateString() + '</td><td style="width:10%;"/><td><a target="_blank" href="http://maps.google.com/?q=' + where + '">' + where + '</a></td></tr>';
 						$("#gcal-events > tbody:last-child").append(row);
 						$("#showHolder").show();
 					});
