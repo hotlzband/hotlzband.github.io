@@ -16,7 +16,7 @@
 				$.getJSON(calendar_json_url, function(data){
 					$.each(data, function(i, item){
 					//$.each(data.feed.entry, function(i, item){
-						var when = item.start;
+						var when = new Date(item.start);
 						var where = item.location;
 						var row = '<tr><td style="width:35%">' + when + '</td><td style="width:10%;"/><td><a target="_blank" href="http://maps.google.com/?q=' + where + '">' + where + '</a></td></tr>';
 						$("#gcal-events > tbody:last-child").append(row);
