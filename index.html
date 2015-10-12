@@ -7,22 +7,24 @@
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script>
 			function padDate(n){return n<10 ? '0'+n : n}
-			
+
 			function populateShows(){
 				var date = new Date();
-				var calendar_json_url = 'http://www.google.com/calendar/feeds/n9if4js3l7d3k8u57un90s7ueg%40group.calendar.google.com/public/basic?alt=json';
-				calendar_json_url = calendar_json_url + '&start-min=' + date.getFullYear() + '-' + padDate(date.getMonth() + 1) + '-' + padDate(date.getDate());
+				var calendar_json_url = './scripts/dates.json';
+				//var calendar_json_url = 'http://www.google.com/calendar/feeds/n9if4js3l7d3k8u57un90s7ueg%40group.calendar.google.com/public/basic?alt=json';
+				//calendar_json_url = calendar_json_url + '&start-min=' + date.getFullYear() + '-' + padDate(date.getMonth() + 1) + '-' + padDate(date.getDate());
 				$.getJSON(calendar_json_url, function(data){
-					$.each(data.feed.entry, function(i, item){
-						var when = item.summary.$t.match(/(When: )[^<]*/)[0].replace(/When: /,'').replace(/to .*/,'');
-						var where = item.summary.$t.match(/(Where: )[^<]*/)[0].replace(/Where: /,'');
+					$.each(data, function(i, item){
+					//$.each(data.feed.entry, function(i, item){
+						var when = item.start;
+						var where = item.location;
 						var row = '<tr><td style="width:35%">' + when + '</td><td style="width:10%;"/><td><a target="_blank" href="http://maps.google.com/?q=' + where + '">' + where + '</a></td></tr>';
 						$("#gcal-events > tbody:last-child").append(row);
 						$("#showHolder").show();
 					});
 				});
 			}
-			
+
 			function populateTwitter(){
 				var twtrHandle = 'HOTLZband';
 				var twitter_feed_url = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=http://queryfeed.net/tw?q=' + twtrHandle;
@@ -37,14 +39,14 @@
 					});
 				}, "jsonp");
 			}
-			
+
 			$( document ).ready(function() {
 				populateShows();
 				populateTwitter();
 			});
-			
+
 		</script>
-		
+
 		<style>
 			body {
 				background: #000000 url("./objects/soundBoard.jpg") no-repeat fixed left top;
@@ -101,7 +103,7 @@
 
 			</div>
 		</div>
-		
+
 		<br/>
 		<div id="showHolder" style="margin:0px auto; width:80%; display:none;">
 			<div id="shows" style="border-radius:10px; background:#FFFFFF;">
@@ -112,7 +114,7 @@
 				</table>
 			</div>
 		</div>
-		
+
 		<br/>
 		<div id="twtrHolder" style="margin:0px auto; width:80%; display:none;">
 			<div id="twtr" style="border-radius:10px; background:#FFFFFF;">
