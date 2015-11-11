@@ -2,11 +2,11 @@
 //If anything changed, push the new file out there.
 
 var ical = require('ical');
-var jsonfile = require('jsonfile')
+var jsonfile = require('jsonfile');
 
 var currentDate = new Date();
 var dateFile = '../objects/dates.json'
-var overWrite = false;
+var overWrite = true;
 var lastMod = 0;
 
 //Grab latest mod date from current file
@@ -16,6 +16,12 @@ for (var k in currentDates) {
 		var ev = currentDates[k]
 		if (ev['last-modified'].substring(0,7) > lastMod) {
 			lastMod = ev['last-modified'];
+		}
+		
+		var start = new Date(ev['start']);
+		if (start < currentDate ) {
+			console.log('Consenting overwrite. Current file has old date: ' + ev['uid']);
+			overWrite = true;
 		}
 	}
 }
