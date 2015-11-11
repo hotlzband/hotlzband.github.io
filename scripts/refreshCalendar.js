@@ -6,7 +6,7 @@ var jsonfile = require('jsonfile');
 
 var currentDate = new Date();
 var dateFile = '../objects/dates.json'
-var overWrite = true;
+var overWrite = false;
 var lastMod = 0;
 
 //Grab latest mod date from current file
@@ -50,6 +50,12 @@ ical.fromURL('https://www.google.com/calendar/ical/n9if4js3l7d3k8u57un90s7ueg%40
 	}
 
 	if(overWrite){
+		//sort it by date ascending
+		outString.sort( function(a,b){
+			return a.start-b.start
+		});
+		
+		//create the new file
 		jsonfile.writeFile(dateFile, outString, function (err) {
 			console.error(err)
 		});
