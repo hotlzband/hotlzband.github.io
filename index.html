@@ -5,6 +5,8 @@
 		<title>Hot LZ</title>
 
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<!--<script src='https://jquery-xml2json-plugin.googlecode.com/svn/trunk/jquery.js'></script>-->
+
 		<script>
 			function padDate(n){return n<10 ? '0'+n : n}
 
@@ -23,9 +25,11 @@
 			}
 
 			function populateTwitter(){
-				var twtrHandle = 'HOTLZband';
+				var twtrHandle = 'hotlzband';
+				//var twitter_feed_url = 'https://queryfeed.net/tw?q=' + twtrHandle;
 				var twitter_feed_url = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=http://queryfeed.net/tw?q=' + twtrHandle;
 				$.get(twitter_feed_url, function(data){
+					//var json = $.xml2json(data);
 					$.each(data.responseData.feed.entries, function(i, item){
 						if(item.author != twtrHandle){
 							return true;
@@ -74,24 +78,32 @@
 				<img src="./objects/bandlogo.png" />
 			</div>
 			<div style="text-align:center;">
-				<a href="http://www.twitter.com/HOTLZband" target="_blank">
+				<a href="http://www.twitter.com/HOTLZband" title="Twitter" target="_blank">
 					<img src="./objects/twitter.svg" height="40px"/>
 				</a>
 
-				<a href="http://www.Facebook.com/hotlzband" target="_blank">
+				<a href="http://www.Facebook.com/hotlzband" title="Facebook" target="_blank">
 					<img src="./objects/facebook.svg" height="40px"/>
 				</a>
 
-				<a href="https://www.youtube.com/channel/UC0k8i5rc8bRTc3Ius7N5MiQ" target="_blank">
+				<a href="https://www.youtube.com/channel/UC0k8i5rc8bRTc3Ius7N5MiQ" title="Youtube" target="_blank">
 					<img src="./objects/youtube.svg" height="40px"/>
 				</a>
 
-				<a href="http://open.spotify.com/artist/5CkM0YCQc7ZmhMlf9bcqJu" target="_blank">
+				<a href="http://open.spotify.com/artist/5CkM0YCQc7ZmhMlf9bcqJu" title="Spotify" target="_blank">
 					<img src="./objects/spotify.svg" height="40px"/>
 				</a>
 
-				<a href="http://www.sonicbids.com/band/hot-lz/" target="_blank">
+				<a href="http://www.sonicbids.com/band/hot-lz/" title="Sonicbids" target="_blank">
 					<img src="./objects/sonicbids.svg" height="40px"/>
+				</a>
+				
+				<!--<a href="http://hotlz.bandcamp.com/" title="Bandcamp" target="_blank">
+					<img src="./objects/bandcamp.svg" height="40px"/>
+				</a>-->
+				
+				<a href="https://muzooka.com/hotlzband" title="Muzooka" target="_blank">
+					<img src="./objects/muzooka.svg" height="40px"/>
 				</a>
 
 			</div>
@@ -100,7 +112,7 @@
 		<br/>
 		<div id="showHolder" style="margin:0px auto; width:80%; display:none;">
 			<div id="shows" style="border-radius:10px; background:#FFFFFF;">
-				<div style="text-align:center; font-size:large;"><a target="_blank" href="http://www.facebook.com/hotlzband/events">Shows</a></div>
+				<div style="text-align:center; font-size:large;"><a target="_blank" href="http://www.songkick.com/artists/8667914">Shows</a></div>
 				<hr/>
 				<table id="gcal-events" style="font-size:80%; table-layout:fixed; width:100%; word-wrap:break-word;">
 					<tbody/>
