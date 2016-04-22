@@ -5,24 +5,9 @@
 		<title>Hot LZ</title>
 
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-		<!--<script src='https://jquery-xml2json-plugin.googlecode.com/svn/trunk/jquery.js'></script>-->
 
 		<script>
 			function padDate(n){return n<10 ? '0'+n : n}
-
-			function populateShows(){
-				var date = new Date();
-				var calendar_json_url = './objects/dates.json';
-				$.getJSON(calendar_json_url, function(data){
-					$.each(data, function(i, item){
-						var when = new Date(item.start);
-						var where = item.location;
-						var row = '<tr><td style="width:35%">' + when.toDateString() + '</td><td style="width:10%;"/><td><a target="_blank" href="http://maps.google.com/?q=' + where + '">' + where + '</a></td></tr>';
-						$("#gcal-events > tbody:last-child").append(row);
-						$("#showHolder").show();
-					});
-				});
-			}
 
 			function populateTwitter(){
 				var twtrHandle = 'HOTLZband';
@@ -42,7 +27,6 @@
 			}
 
 			$( document ).ready(function() {
-				populateShows();
 				populateTwitter();
 			});
 
@@ -111,13 +95,7 @@
 
 		<br/>
 		<div id="showHolder" style="margin:0px auto; width:80%; display:none;">
-			<div id="shows" style="border-radius:10px; background:#FFFFFF;">
-				<div style="text-align:center; font-size:large;"><a target="_blank" href="http://www.songkick.com/artists/8667914">Shows</a></div>
-				<hr/>
-				<table id="gcal-events" style="font-size:80%; table-layout:fixed; width:100%; word-wrap:break-word;">
-					<tbody/>
-				</table>
-			</div>
+			<script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script><a href="http://www.bandsintown.com/hotlz" class="bit-widget-initializer" data-artist="hotlz">Hot LZ Tour Dates</a>
 		</div>
 
 		<br/>
