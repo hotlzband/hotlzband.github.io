@@ -11,10 +11,8 @@
 
 			function populateTwitter(){
 				var twtrHandle = 'HOTLZband';
-				//var twitter_feed_url = 'https://queryfeed.net/tw?q=' + twtrHandle;
 				var twitter_feed_url = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=http://queryfeed.net/tw?q=' + twtrHandle;
 				$.get(twitter_feed_url, function(data){
-					//var json = $.xml2json(data);
 					$.each(data.responseData.feed.entries, function(i, item){
 						if(item.author != twtrHandle){
 							return true;
@@ -51,12 +49,134 @@
 			hr {
 				margin: 0;
 			}
+			.sectioner {
+				margin:0px auto;
+				width:80%;
+				margin-top: 20px;
+			}
+			.roundedBox {
+				border-radius:10px;
+				background:#FFFFFF;
+			}
+			.headerBox {
+				text-align:center;
+				font-size:large;
+			}
+			.boxTable {
+				font-size:80%;
+				table-layout:fixed;
+				width:100%;
+				word-wrap:break-word;
+			}
+			.flexBox {
+				display: flex; 
+				flex-wrap: wrap;
+			}
+			.bandCampFrame {
+				width: 400px;
+				height: 241px;
+				border-radius: 10px;
+				border: 0;
+				margin-right: 20px;
+			}
+
+			.mm_Widget {
+				width: 391px;
+				height: 193px;
+				background: url(https://www.midwestmerch.net/images/imgMyspaceBg.jpg) no-repeat;
+				border-radius:10px;
+				margin-top:20px
+			}
+
+			.mm_WidgetLink {
+				position: relative;
+				display: block;
+				width: 100%;
+				height: 193px;
+				top: 0px;
+				left: 0px;
+			}
+
+			.mm_Artist {
+				position: relative;
+				float: left;
+				font-family: Georgia, serif;
+				font-size: 19px;
+				font-style: italic;
+				margin-top: 8px;
+				margin-left: 28px;
+				width: 144px;
+				color: #000000;
+			}
+
+			.mm_Artist span.bold {
+				font-weight: bold;
+			}
+
+			.mm_ShirtWrapper {
+				position: relative;
+				float: left;
+				width: 192px;
+				height: 193px;
+				text-align: center;
+				padding-top: 20px;
+			}
+
+			.mm_Shirt {
+				margin-left: auto;
+				margin-right: auto;
+				width: 174px;
+				height: 153px;
+			}
+
+			.mm_ShirtPreview161 {
+				margin-left: auto;
+				margin-right: auto;
+				width: 161px;
+				height: 146px;
+				background: url(https://www.midwestmerch.net//images/imgPreviewShirt161_transparent.png) no-repeat;
+			}
+
+			.mm_Preview_1 {
+				position: relative;
+				float: right;
+				margin-right: 80px;
+				padding-top: 30px;
+			}
+
+			.mm_Preview_2 {
+				position: relative;
+				float: left;
+				margin-left: 80px;
+				padding-top: 30px;
+			}
+
+			.mm_Preview_3 {
+				position: relative;
+				float: right;
+				margin-right: 80px;
+				padding-top: 65px;
+			}
+
+			.mm_Preview_4 {
+				position: relative;
+				float: left;
+				margin-left: 80px;
+				padding-top: 65px;
+			}
+
+			.mm_Preview_5 {
+				width: 161px;
+				text-align: center;
+				margin-left: auto;
+				margin-right: auto;
+				padding-top: 30px;
+			}
 		</style>
 	</head>
 
 	<body id="body">
-		<br/>
-		<div style="margin:0px auto; width:80%; border-radius:10px; background:#FFFFFF;">
+		<div  class="sectioner roundedBox">
 			<br/>
 			<div style="text-align:center">
 				<img src="./objects/bandlogo.png" />
@@ -81,11 +201,11 @@
 				<a href="http://www.sonicbids.com/band/hot-lz/" title="Sonicbids" target="_blank">
 					<img src="./objects/sonicbids.svg" height="40px"/>
 				</a>
-				
+
 				<a href="https://hotlz.bandcamp.com/" title="Bandcamp" target="_blank">
 					<img src="./objects/bandcamp.svg" height="40px"/>
 				</a>
-				
+
 				<a href="https://muzooka.com/hotlzband" title="Muzooka" target="_blank">
 					<img src="./objects/muzooka.svg" height="40px"/>
 				</a>
@@ -93,25 +213,39 @@
 			</div>
 		</div>
 
-		<br/>
-		<div id="showHolder" style="margin:0px auto; width:80%; back">
-			<div id="shows" style="border-radius:10px; background:#FFFFFF;">
- 				<script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script>
+		<div id="showHolder" class="sectioner">
+			<div id="shows" class="roundedBox">
+				<script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script>
 				<a href="http://www.bandsintown.com/hotlz" class="bit-widget-initializer" data-artist="hotlz">Hot LZ Tour Dates</a>
- 			</div>			
+			</div>
 		</div>
 
-		<br/>
-		<div id="twtrHolder" style="margin:0px auto; width:80%; display:none;">
-			<div id="twtr" style="border-radius:10px; background:#FFFFFF;">
-				<div style="text-align:center; font-size:large;"><a target="_blank" href="http://www.twitter.com/HOTLZband">Twitter</a></div>
+		<div id="twtrHolder" class="sectioner">
+			<div id="twtr" class="roundedBox">
+				<div class="headerBox"><a target="_blank" href="http://www.twitter.com/HOTLZband">Twitter</a></div>
 				<hr/>
-				<table id="twtr-events" style="font-size:80%; table-layout:fixed; width:100%; word-wrap:break-word;">
+				<table id="twtr-events" class="boxTable">
 					<tbody/>
 				</table>
 			</div>
 		</div>
 		
+		<div class="sectioner flexBox">
+			<iframe class="bandCampFrame" src="https://bandcamp.com/EmbeddedPlayer/album=3226829636/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless>
+				<a href="http://hotlz.bandcamp.com/album/beachhead-blues">Beachhead Blues by HOT LZ</a>
+			</iframe>
+			
+			<div class="mm_Widget">
+				<div class="mm_ShirtWrapper">
+					<div class="mm_ShirtPreview161" style="background-color: #000000">
+						<div class="mm_Preview_5"><img src="https://www.midwestmerch.net/lib/artist_images/preview/146902969325840662634e8e0c686768e4487d306b.png.png" width="72" height="72" /></div>
+					</div>
+				</div>
+				<div class="mm_Artist">Buy this shirt and others by <span class="bold">HOT LZ</span></div>
+				<a class="mm_WidgetLink" href="https://www.midwestmerch.net/detail/hot-lz-gen-logo/" target="_blank"></a>
+			</div>
+		</div>
+
 		<script>
 			(function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
 			t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
