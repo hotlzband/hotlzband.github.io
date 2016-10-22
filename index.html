@@ -4,11 +4,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Hot LZ</title>
 
+		<link rel="stylesheet" type="text/css" href="./objects/mmstyle.css">
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 		<script>
-			function padDate(n){return n<10 ? '0'+n : n}
-
 			function populateTwitter(){
 				var twtrHandle = 'HOTLZband';
 				var twitter_feed_url = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=http://queryfeed.net/tw?q=' + twtrHandle;
@@ -40,7 +39,6 @@
 				line-height: 28px;
 			}
 			a {
-				color: #e45f56;
 				text-decoration: none;
 			}
 			a:hover {
@@ -49,16 +47,36 @@
 			hr {
 				margin: 0;
 			}
-			.sectioner {
-				margin:0px auto;
-				width:80%;
-				margin-top: 20px;
+			.headerBox{
+				border-radius:10px;
+				background-image:url('./objects/bandlogo.png');
+				background-repeat:no-repeat;
+				//background-attachment:fixed;
+				background-position:center left;
+				background-size:105%;
+			}
+			.headerLinkContainer {
+				text-align:center;
+				align-items:flex-end;
+				white-space:nowrap;
+				padding-top:30%;
+			}
+			.headerLink {
+				height:2em;
+				background-color:#FFFFFF;
+				border-radius:10px;
+				//vertical-align: bottom;
 			}
 			.roundedBox {
 				border-radius:10px;
 				background:#FFFFFF;
 			}
-			.headerBox {
+			.sectioner {
+				margin:0px auto;
+				width:80%;
+				margin-top: 20px;
+			}
+			.sectionerHeaderBox {
 				text-align:center;
 				font-size:large;
 			}
@@ -79,135 +97,38 @@
 				border: 0;
 				margin-right: 20px;
 			}
-
-			.mm_Widget {
-				width: 391px;
-				height: 193px;
-				background: url(https://www.midwestmerch.net/images/imgMyspaceBg.jpg) no-repeat;
-				border-radius:10px;
-				margin-top:20px
-			}
-
-			.mm_WidgetLink {
-				position: relative;
-				display: block;
-				width: 100%;
-				height: 193px;
-				top: 0px;
-				left: 0px;
-			}
-
-			.mm_Artist {
-				position: relative;
-				float: left;
-				font-family: Georgia, serif;
-				font-size: 19px;
-				font-style: italic;
-				margin-top: 8px;
-				margin-left: 28px;
-				width: 144px;
-				color: #000000;
-			}
-
-			.mm_Artist span.bold {
-				font-weight: bold;
-			}
-
-			.mm_ShirtWrapper {
-				position: relative;
-				float: left;
-				width: 192px;
-				height: 193px;
-				text-align: center;
-				padding-top: 20px;
-			}
-
-			.mm_Shirt {
-				margin-left: auto;
-				margin-right: auto;
-				width: 174px;
-				height: 153px;
-			}
-
-			.mm_ShirtPreview161 {
-				margin-left: auto;
-				margin-right: auto;
-				width: 161px;
-				height: 146px;
-				background: url(https://www.midwestmerch.net//images/imgPreviewShirt161_transparent.png) no-repeat;
-			}
-
-			.mm_Preview_1 {
-				position: relative;
-				float: right;
-				margin-right: 80px;
-				padding-top: 30px;
-			}
-
-			.mm_Preview_2 {
-				position: relative;
-				float: left;
-				margin-left: 80px;
-				padding-top: 30px;
-			}
-
-			.mm_Preview_3 {
-				position: relative;
-				float: right;
-				margin-right: 80px;
-				padding-top: 65px;
-			}
-
-			.mm_Preview_4 {
-				position: relative;
-				float: left;
-				margin-left: 80px;
-				padding-top: 65px;
-			}
-
-			.mm_Preview_5 {
-				width: 161px;
-				text-align: center;
-				margin-left: auto;
-				margin-right: auto;
-				padding-top: 30px;
-			}
 		</style>
 	</head>
 
 	<body id="body">
-		<div  class="sectioner roundedBox">
-			<br/>
-			<div style="text-align:center">
-				<img src="./objects/bandlogo.png" />
-			</div>
-			<div style="text-align:center;">
+		<div  class="headerBox sectioner">
+			<div class="headerLinkContainer">
 				<a href="http://www.twitter.com/HOTLZband" title="Twitter" target="_blank">
-					<img src="./objects/twitter.svg" height="40px"/>
+					<img src="./objects/twitter.svg" class="headerLink">
 				</a>
 
 				<a href="http://www.Facebook.com/hotlzband" title="Facebook" target="_blank">
-					<img src="./objects/facebook.svg" height="40px"/>
+					<img src="./objects/facebook.svg" class="headerLink"/>
 				</a>
 
 				<a href="https://www.youtube.com/channel/UC0k8i5rc8bRTc3Ius7N5MiQ" title="Youtube" target="_blank">
-					<img src="./objects/youtube.svg" height="40px"/>
+					<img src="./objects/youtube.svg" class="headerLink"/>
 				</a>
 
 				<a href="http://open.spotify.com/artist/5CkM0YCQc7ZmhMlf9bcqJu" title="Spotify" target="_blank">
-					<img src="./objects/spotify.svg" height="40px"/>
+					<img src="./objects/spotify.svg" class="headerLink"/>
 				</a>
 
 				<a href="http://www.sonicbids.com/band/hot-lz/" title="Sonicbids" target="_blank">
-					<img src="./objects/sonicbids.svg" height="40px"/>
+					<img src="./objects/sonicbids.svg" class="headerLink"/>
 				</a>
 
 				<a href="https://hotlz.bandcamp.com/" title="Bandcamp" target="_blank">
-					<img src="./objects/bandcamp.svg" height="40px"/>
+					<img src="./objects/bandcamp.svg" class="headerLink"/>
 				</a>
 
 				<a href="https://muzooka.com/hotlzband" title="Muzooka" target="_blank">
-					<img src="./objects/muzooka.svg" height="40px"/>
+					<img src="./objects/muzooka.svg" class="headerLink"/>
 				</a>
 
 			</div>
@@ -222,7 +143,7 @@
 
 		<div id="twtrHolder" class="sectioner">
 			<div id="twtr" class="roundedBox">
-				<div class="headerBox"><a target="_blank" href="http://www.twitter.com/HOTLZband">Twitter</a></div>
+				<div class="sectionerHeaderBox"><a target="_blank" href="http://www.twitter.com/HOTLZband">Twitter</a></div>
 				<hr/>
 				<table id="twtr-events" class="boxTable">
 					<tbody/>
