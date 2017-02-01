@@ -5,29 +5,7 @@
 		<title>Hot LZ</title>
 
 		<link rel="stylesheet" type="text/css" href="./objects/mmstyle.css">
-		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-		<script>
-			function populateTwitter(){
-				var twtrHandle = 'HOTLZband';
-				var twitter_feed_url = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=http://queryfeed.net/tw?q=' + twtrHandle;
-				$.get(twitter_feed_url, function(data){
-					$.each(data.responseData.feed.entries, function(i, item){
-						if(item.author != twtrHandle){
-							return true;
-						}
-						var row = '<tr><td>' + item.content + '</td></tr>';
-						$("#twtr-events > tbody:last-child").append(row);
-						$("#twtrHolder").show();
-					});
-				}, "jsonp");
-			}
-
-			$( document ).ready(function() {
-				populateTwitter();
-			});
-
-		</script>
+		<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
 
 		<style>
 			body {
@@ -145,15 +123,14 @@
 			<div id="twtr" class="roundedBox">
 				<div class="sectionerHeaderBox"><a target="_blank" href="http://www.twitter.com/HOTLZband">Twitter</a></div>
 				<hr/>
-				<table id="twtr-events" class="boxTable">
-					<tbody/>
-				</table>
+				<script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="8696/"></script>
 			</div>
 		</div>
 		
 		<div class="sectioner flexBox">
-			<iframe class="bandCampFrame" src="https://bandcamp.com/EmbeddedPlayer/album=3226829636/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless>
-				<a href="http://hotlz.bandcamp.com/album/beachhead-blues">Beachhead Blues by HOT LZ</a>
+			<iframe style="border: 0; width: 100%; height: 274px;" 
+				src="https://bandcamp.com/EmbeddedPlayer/album=821653521/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless>
+				<a href="http://hotlz.bandcamp.com/album/itchy-trigger-finger">Itchy Trigger Finger by HOT LZ</a>
 			</iframe>
 		</div>
 
