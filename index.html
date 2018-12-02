@@ -1,16 +1,16 @@
-<html>
+<!doctype html>
+<html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
 		<title>Hot LZ</title>
 
-		<link rel="stylesheet" type="text/css" href="./objects/mmstyle.css">
-		<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
-
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		
 		<style>
 			body {
-				background: #000000 url("./objects/soundBoard.jpg") no-repeat fixed left top;
-				background-size: cover;
+				background: #000000;
 				font: 16px/1.8 sans-serif;
 				font-family: "Lato", Geneva, Tahoma, sans-serif;
 				font-weight: 400;
@@ -29,9 +29,9 @@
 				border-radius:10px;
 				background-image:url('./objects/bandlogo.png');
 				background-repeat:no-repeat;
-				//background-attachment:fixed;
 				background-position:center left;
 				background-size:100%;
+				padding-bottom:5px;
 			}
 			.headerLinkContainer {
 				text-align:center;
@@ -47,32 +47,29 @@
 			.roundedBox {
 				border-radius:10px;
 				background:#FFFFFF;
+				text-align:center;
+			}
+			.transparentBox {
+				background:transparent
 			}
 			.sectioner {
-				margin:0px auto;
-				width:80%;
 				margin-top: 20px;
 			}
 			.sectionerHeaderBox {
 				text-align:center;
 				font-size:large;
 			}
-			.flexBox {
-				display: flex; 
-				flex-wrap: wrap;
-			}
 			.bandCampFrame {
-				width: 400px;
-				height: 274px;
+				height: 300px;
 				border-radius: 10px;
 				border: 0;
-				margin-right: 20px;
+				margin:auto;
 			}
 		</style>
 	</head>
 
 	<body id="body">
-		<div  class="headerBox sectioner">
+		<div  class="sectioner container headerBox">
 			<div class="headerLinkContainer">
 				<a href="http://www.twitter.com/HOTLZband" title="Twitter" target="_blank">
 					<img src="./objects/twitter.svg" class="headerLink">
@@ -86,7 +83,7 @@
 					<img src="./objects/youtube.svg" class="headerLink"/>
 				</a>
 
-				<a href="https://open.spotify.com/album/38FhCJNtveuUbf8AwKAu5D" title="Spotify" target="_blank">
+				<a href="https://open.spotify.com/artist/5CkM0YCQc7ZmhMlf9bcqJu" title="Spotify" target="_blank">
 					<img src="./objects/spotify.svg" class="headerLink"/>
 				</a>
 
@@ -98,10 +95,6 @@
 					<img src="./objects/bandcamp.svg" class="headerLink"/>
 				</a>
 
-				<a href="https://muzooka.com/hotlzband" title="Muzooka" target="_blank">
-					<img src="./objects/muzooka.svg" class="headerLink"/>
-				</a>
-				
 				<a href="https://hotlzband.threadless.com/" title="Threadless" target="_blank">
 					<img src="./objects/cart.svg" class="headerLink"/>
 				</a>
@@ -109,14 +102,14 @@
 			</div>
 		</div>
 
-		<div id="showHolder" class="sectioner">
+		<div id="showHolder" class="sectioner container">
 			<div id="shows" class="roundedBox">
-				<script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script>
-				<a href="http://www.bandsintown.com/hotlz" class="bit-widget-initializer" data-artist="hotlz">Hot LZ Tour Dates</a>
+				<script charset="utf-8" src="https://widget.bandsintown.com/main.min.js">
+				</script><a class="bit-widget-initializer" data-artist-name="hot lz" data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#000000" data-link-color="#000000" data-background-color="rgba(0,0,0,0)" data-display-limit="5" data-link-text-color="#FFFFFF" data-display-lineup="false" data-separator-color=""></a>
 			</div>
 		</div>
 
-		<div id="twtrHolder" class="sectioner">
+		<div id="twtrHolder" class="sectioner container">
 			<div id="twtr" class="roundedBox">
 				<div class="sectionerHeaderBox"><a target="_blank" href="http://www.twitter.com/HOTLZband">Twitter</a></div>
 				<hr/>
@@ -124,18 +117,18 @@
 			</div>
 		</div>
 		
-		<div class="sectioner flexBox">
-			<iframe class="bandCampFrame"
-				src="https://bandcamp.com/EmbeddedPlayer/album=821653521/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless>
-				<a href="http://hotlz.bandcamp.com/album/itchy-trigger-finger">Itchy Trigger Finger by HOT LZ</a>
-			</iframe>
+		<div class="sectioner container">
+			<div class="roundedBox transparentBox">
+				<iframe class="bandCampFrame"
+					src="https://bandcamp.com/EmbeddedPlayer/album=821653521/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless>
+					<a href="http://hotlz.bandcamp.com/album/itchy-trigger-finger">Itchy Trigger Finger by HOT LZ</a>
+				</iframe>
+			</div>
 		</div>
-
-		<script>
-			(function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
-			t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
-			})(window, document, '_gscq','script','//widgets.getsitecontrol.com/40769/script.js');
-		</script>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 	</body>
 </html>
