@@ -28,17 +28,19 @@
 			}
 			.headerBox{
 				border-radius:10px;
-				background-image:url('./objects/bandlogo.png');
+				background-image:url('./objects/bandlogo.jpg');
 				background-repeat:no-repeat;
-				background-position:center left;
-				background-size:100%;
-				padding-bottom:5px;
+				background-position:center;
+				background-size:contain;
+				height: 0;
+				width: 100%;
+				padding-top:25%;
 			}
 			.headerLinkContainer {
 				text-align:center;
 				align-items:flex-end;
 				white-space:nowrap;
-				padding-top:30%;
+				zpadding-top:30%;
 			}
 			.headerLink {
 				height:2em;
@@ -70,7 +72,8 @@
 	</head>
 
 	<body id="body">
-		<div  class="sectioner container headerBox">
+		<div  class="sectioner container headerBox"></div>
+		<div>
 			<div class="headerLinkContainer">
 				<a href="http://www.twitter.com/HOTLZband" title="Twitter" target="_blank">
 					<img src="./objects/twitter.svg" class="headerLink">
@@ -110,12 +113,21 @@
 			</div>
 		</div>
 
+		<!--
 		<div id="twtrHolder" class="sectioner container">
 			<div id="twtr" class="roundedBox">
 				<div class="sectionerHeaderBox"><a target="_blank" href="http://www.twitter.com/HOTLZband">Twitter</a></div>
 				<hr/>
 				<script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="8696/"></script>
 			</div>
+		</div>
+		-->
+		<div class="sectioner container">
+			<iframe height="315" width="100%"
+				src="https://www.youtube.com/embed/oEvAjUsauas" 
+				frameborder="0" 
+				allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+				allowfullscreen></iframe>
 		</div>
 		
 		<div class="sectioner container">
